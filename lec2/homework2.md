@@ -1,4 +1,6 @@
-# Homework 
+# Homework 2
+### 吴昊 2016K8009929015（本科生）
+### 邮件：wuhao164@mails.ucas.ac.cn
 ## 1 successful prob of Fast-Cut 
 Successful probablity:
 the origin size n problem is reduced to two subproblem size $\frac{n}{\sqrt 2}$, considering the contract procedure, the probability that the result of subproblem is exactly the result of origin problem is
@@ -54,4 +56,3 @@ Then $$x\in L^c\Rightarrow Pr(B(x)accepts)=1-Pr(A(x)accepts)\gt \frac{3}{4}$$$$x
 implys BPP=co-BPP
 
 ## Optional Problem 1.15 Page 27
-

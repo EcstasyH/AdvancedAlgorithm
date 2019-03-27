@@ -35,7 +35,7 @@ Time complexity:
 $$T(n)=2T(\frac{n}{\sqrt 2})+O(n^2)$$
 $$T(n)=O(n^2\log n)$$
 Successful probablity:
-the origin size n problem is reduced to two subproblem size $\frac{n}{\sqrt 2}$, considering the contract procedure, the probability that the result of subproblem is exactly the result of origin problem is
+the origin size n problem is reduced to two subproblem size $\frac{n}{\sqrt 2}$, considering the contract procedure, the probability that the result of subproblem is exactly the result of origin problem is **more than**
 $$
 (1-\frac{2}{n})(1-\frac{2}{n-1})...(1-\frac{2}{n/\sqrt 2})=\frac{(\frac{n}{\sqrt2}-1)(\frac{n}{\sqrt2}-2)}{n(n-1)}\ge\frac{1}{2}
 $$
