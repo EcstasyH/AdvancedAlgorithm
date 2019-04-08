@@ -103,7 +103,7 @@ $L\in BPP \iff \exists \text{randomized algorithm A running in worst-case polyno
 \end{cases}$
 
 **Definition(PP prob poly time)**:
-$L\in BPP \iff \exists \text{randomized algorithm A running in worst-case polynomial time} s.t. \forall x\in \Sigma^*,\begin{cases}x\in L\Rightarrow Pr(A(x)accepts) \gt \frac{1}{2} \\ x\notin L\Rightarrow Pr(A(x)accepts)\lt\frac{1}{2}
+$L\in PP \iff \exists \text{randomized algorithm A running in worst-case polynomial time} s.t. \forall x\in \Sigma^*,\begin{cases}x\in L\Rightarrow Pr(A(x)accepts) \gt \frac{1}{2} \\ x\notin L\Rightarrow Pr(A(x)accepts)\lt\frac{1}{2}
 \end{cases}$
 
 **Definition(ZPP Zero-error prob poly time)**:
@@ -140,18 +140,3 @@ repeat 3-4 one time has probabilty 3/4 to stop,which ensures the expected runnin
 
 ### Relations
 $$P\subseteq RP\subseteq _{BPP}^{NP} \subseteq PP \subseteq PSPACE$$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
