@@ -1,4 +1,4 @@
-# Homework 2
+# Homework 3
 ### 吴昊 2016K8009929015（本科生）
 ### 邮件：wuhao164@mails.ucas.ac.cn
 ### 1 Prove Chernoff Bound (2)(3)
@@ -56,10 +56,16 @@ $$
 $$
 The other side
 $$
-\binom{m}{x}=\frac{m}{x}\frac{m-1}{x-1}...\frac{m-x+2}{2}\frac{m-x+1}{1}\le \frac{m^x}{x!}\tag 1
+\binom{m}{x}=\frac{m}{x}\frac{m-1}{x-1}...\frac{m-x+2}{2}\frac{m-x+1}{1}\le \frac{m^x}{x!}
 $$
 Applying stirling formula $x!=\sqrt{2\pi x}(\frac{x}{e})^x$, since $m(m-1)...(m-x+1)\le \frac{m^x}{\sqrt{2\pi x}}$, we can omit the factor $\sqrt{2\pi x}$ and obtain
 $$\binom{m}{x}\le (\frac{em}{x})^x$$
 
 ### 3.$Cor(Y_i,Y_j)<0$
-
+**Prove:**
+$$Cor(Y_i,Y_j)=E(Y_iY_j)-E(Y_i)E(Y_j)$$
+Assume the probability that $Y_i=1$ is $p$, that is $E(Y_i)=E(Y_j)=p$, 
+$$E(Y_iY_j)=E(Y_i|Y_j)E(Y_j)=E(Y_i|Y_j)p$$
+We can focus on $E(Y_i|Y_j)$, which means the expectation of $Y_i$ with the condition that more than $cx$ balls fall into another bin.
+$$E(Y_i|Y_j)\lt \sum_{i=cx}^{m-cx}\binom{m-cx}{i}(\frac{1}{n})^{i}(\frac{n-1}{n})^{m-cx-i}\lt \sum_{i=cx}^m\binom{m}{i}(\frac{1}{n})^{i}(\frac{n-1}{n})^{m-i}=E(Y_j)$$
+It yields the desired result that $Cor(Y_i,Y_j)\lt 0$

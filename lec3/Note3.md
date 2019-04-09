@@ -94,7 +94,7 @@ $$Pr(k\ge x)\le n(\frac{e}{x})^x\tag 9$$
 Take $x=\frac{\ln n}{\ln \ln n}$ into (9), we can obtain that $Pr(k\ge x)=o(1)$. Then we want $Pr(k\le cx)=o(1)$ 
 
 $$Pr(k\le cx)=Pr(X_1\le cx \bigwedge X_2\le cx \bigwedge ... \bigwedge X_n\le cx)\tag{10}$$
-We then try to use Chebyshev inequality: denote $X_i\le cx$ by $Y_i=1$, otherwise $Y_i = 0$
+We then try to use Chebyshev inequality: denote $X_i\le cx$ by $Y_i=0$, otherwise $Y_i = 1$
 $$\begin{aligned}
 Pr(k\le cx)=&Pr(\forall i,Y_i=0)\\
 \le&Pr(|\sum_{i=1}^nY_i-E(\sum_{i=1}^nY_i)|\ge E(\sum_{i=1}^nY_i))\\
@@ -120,3 +120,15 @@ $$\begin{aligned}
 so
 $$Pr(k\lt cx)\le O(\frac{n}{n^{2(1-c)}})$$
 let $c=\frac{1}{3}$,we can say $\frac{\ln n}{3\ln \ln n}\lt k \lt \frac{\ln n}{\ln \ln n}$ with high probability.
+
+What about $m\ge n\ln n$? We can prove $k=\Theta(\frac{m}{n})$ w.h.p.
+
+$$\begin{aligned}
+Pr(k\ge c\frac{m}{n})\le& n\binom{m}{c\frac{m}{n}}(\frac{1}{n})^{c\frac{m}{n}}\\
+\le&n(\frac{em}{c\frac{m}{n}})^{c\frac{m}{n}}(\frac{1}{n})^{c\frac{m}{n}}\\
+=& n(\frac{e}{c})^{c^2\ln n}\\
+=&o(1)  
+\end{aligned}$$
+Need $(\frac{e}{c})^{c^2}\lt \frac{1}{e}$. Or we can use Chernoff bound to prove. Let $Y_i$ denote that the i-th ball fall into the first bin.(which bin does not matter) 
+$$X_1=\Sigma_{i=1}^mY_i$$
+$$Pr(|X_1-\frac{m}{n}|\lt c_1\frac{m}{n})\le 2e^{-\frac{c_1^2}{3}\frac{m}{n}}=2\frac{1}{n^{\frac{c_1^2}{3}}}$$
