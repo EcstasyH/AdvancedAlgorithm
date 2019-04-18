@@ -58,8 +58,8 @@ The other side
 $$
 \binom{m}{x}=\frac{m}{x}\frac{m-1}{x-1}...\frac{m-x+2}{2}\frac{m-x+1}{1}\le \frac{m^x}{x!}
 $$
-Applying stirling formula $x!=\sqrt{2\pi x}(\frac{x}{e})^x$, since $m(m-1)...(m-x+1)\le \frac{m^x}{\sqrt{2\pi x}}$, we can omit the factor $\sqrt{2\pi x}$ and obtain
-$$\binom{m}{x}\le (\frac{em}{x})^x$$
+Applying stirling formula $x!=\sqrt{2\pi x}(\frac{x}{e})^x$ to obtain
+$$\binom{m}{x}\le \frac{1}{\sqrt{2\pi x}}(\frac{em}{x})^x \lt (\frac{em}{x})^x$$
 
 ### 3.$Cor(Y_i,Y_j)<0$
 **Prove:**

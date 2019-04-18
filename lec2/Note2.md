@@ -1,7 +1,7 @@
 # Lecture 2
 
 ## Fast Cut algo
-review **Contrast Algorithm** for Min-Cut problem
+review **Contract Algorithm** for Min-Cut problem
 
 ```{.line-numbers}
 Contract Algo:
