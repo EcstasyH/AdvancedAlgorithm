@@ -21,6 +21,14 @@ $$E_{3456}=E(3出现的次数|掷出6之前数列是不减的,只有3、4、5、
 
 PS：这道题诡异的地方在于$E_{456}=E_{56}$，看出去前者多了一个4作为“缓冲”，但实际上4作为缓冲区会降低进入$E_{56}$对应的子过程的概率。而且需要注意的是，所有非减的串一定是由6结尾的。
 
+**解法2**：
+一个以6结尾的不减序列一定是一下形式$$1\backsim12\backsim23\backsim34\backsim45\backsim56$$
+其中，1、2、3、4、5按顺序出现若干次（可能为0），最后6出现1次。我们需要求的就是这种序列长度的期望。
+考虑1出现的次数的期望，这是一个成功概率为$\frac{5}{6}$的几何分布，则1平均出现$\frac{1}{\frac{5}{6}}-1=\frac{1}{5}$次。
+那么我们继续考虑2平均出现的次数，这里需要注意的是，虽然我们考察的是“出现若干次2之后出现比2大的数字”，但这并不等价于掷一个没有1的骰子。
+我们可以先把问题看成，“出现若干次2之后出现不是2就停止”，显然，这个问题答案也是$\frac{1}{5}$. 由于停止时可能出现的末尾数字可能是1、3、4、5、6，而这五种可能概率是相等的，所以，在只出现3、4、5、6的情况下，出现2的次数的期望仍旧是$\frac{1}{5}$.
+由此可见，1到5出现的次数的期望均为5，故总的长度的期望是$\frac{1}{5}\times5+1=2$。
+
 ### Permutation Routing Problem
 see RA C4.2 P74
 Given graph G=<V,E>, every node i wants to send one packet to some other node d(i). Every round,every edge direction can transfer at most one packet. How many rounds?
@@ -56,7 +64,6 @@ Since $\sigma$ is a random permutation
 $$Pr(\sigma(y)=(\vec a,1-c,\vec f))=\frac{1}{2^{k+1}}$$
 And there are $2^k$ different choices to satisfy $y=(\vec d,c,\vec b)$, so the expection of delay of edge e is $\frac{1}{2}$, average total delay is 1. 
 ### Probabilistic Method
-Ref. PM- Chapter 1
 **Ramsey number**:
     Ramsey number $R(m,n)$ is the smallest number k such that in any 2-coloring of the edges of a complete graph on k vertices by red and blue, there is either a red $K_n$ or a blue $K_m$, computing $R(m,n)$ with exact is difficult, so we are interested in the lower bound.
 
@@ -72,3 +79,9 @@ $$\begin{aligned}
     &= 2\binom{k}{n}\frac{1}{2^{\binom{n}{2}}}
 \end{aligned}$$
 When $k=2^{\frac{n}{2}}$, we have Pr(G is not good)<1, so $R(n,n)\gt 2^{\frac{n}{2}}$
+
+**Max Cut**:
+For any undirected graph G(V,E) with n vertices and m edges, there is a partition of the vertex set V into 2 sets A and B such that $|{(u,v)\in E},u\in A, v \in B|\ge \frac{m}{2}$
+Proof:
+Randomly divide the n vertices into 2 subsets. Let $X_i=1$ denote the i-th edge is in the cut.
+$$E(|CUT|)=E(\sum X_i)=\sum E(X_i)=\frac{m}{2}$$ 
