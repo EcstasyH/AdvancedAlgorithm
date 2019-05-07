@@ -15,8 +15,7 @@ Let X be a random variable with expectation $\mu_x$ and standard deviation $\sig
 Let $X_1,X_2,...,X_n$ be ==independent Poisson trials== such that, for $1\le i \le n, Pr[X_i=1]=p_i$, where $0\lt p_i \lt 1$. Then, for $X=\Sigma_{i=1}^nX_i, \mu=E[X]=\Sigma_{i=1}^np_i$, and any $\delta\gt 0$,
 $$Pr[X\gt (1+\delta)\mu]\lt [\frac{e^\delta}{(1+\delta)^{(1+\delta)}}]^\mu$$
 ... and any $0 \lt \delta \lt 1$,
-$$Pr[X \lt (1-\delta)\mu]\lt [\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}]^\mu\\Pr[|X-\mu|\gt \delta\mu]\lt 2e^
-{-\frac{\delta^2}{3}\mu}$$
+$$Pr[X \lt (1-\delta)\mu]\lt [\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}]^\mu\\Pr[|X-\mu|\gt \delta\mu]\lt 2e^{-\frac{\delta^2}{3}\mu}$$
 
 Prove：
 for any positive real $\lambda$, and applying Markov inequaity, we have
